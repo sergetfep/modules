@@ -12,7 +12,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
+        test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
@@ -22,11 +22,13 @@ module.exports = {
       template: './src/index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: 'main.css',
+      filename: 'style.css',
     }),
   ],
   devServer: {
     static: './dist',
-    port: 9000,
+    port: 8080,
+    open: true,
   },
+  mode: 'development',
 };
